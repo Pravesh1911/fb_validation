@@ -29,8 +29,10 @@ public class Fb_login_page {
 			Email_input_tab.sendKeys(Password);
 			
 		}
-		public void Click_login_button() {
+		public void Click_login_button() { 
 			Login_button.click();
+			
+			
 		}
 		
 		
