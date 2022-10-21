@@ -7,36 +7,39 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Fb_login_page {
 
-	
-		public void Facebook_login_page (WebDriver _driver) {
-			PageFactory.initElements(_driver, this);
-			}
-		@FindBy (id = "email")
-		private WebElement Email_input_tab;
-		
-		@FindBy (id = "pass")
-		private WebElement Password_input_tab;
-		
-		@FindBy (xpath = "//button[@value='1']")
-		private WebElement Login_button;
-		 
-		
-		public void Enter_Email (String Email) throws InterruptedException {
-			Email_input_tab.sendKeys(Email);
-			Thread.sleep(2000);
-		}
-		public void Enter_Password (String Password) {
-			Email_input_tab.sendKeys(Password);
-			
-		}
-		public void Click_login_button() { 
-			Login_button.click();
-			
-			
-			
-			
-		}
-		
-		
+	public  Fb_login_page(WebDriver driver) {
+		//Pagefactory.initElement(driver,this);
+		PageFactory.initElements(driver, this);
 	}
+
+	@FindBy(id = "email") private WebElement Email;
+	
+	@FindBy(xpath = "//input[@id='pass']") private WebElement PassWord;
+	
+	@FindBy(tagName = "button") private WebElement Login_Button;
+	
+	@FindBy (xpath = "//h2[contains(text(),'share with the peopl')]") private WebElement Welcome_Text;
+	
+	public void Enter_Email(String email) {
+		Email.sendKeys(email);
+	}
+	
+	public void Clear_Email() {
+		Email.clear();
+	}
+	
+	public void Enter_Password(String password) {
+		PassWord.sendKeys(password);
+	}
+	
+	public void Click_On_Login() {
+		Login_Button.click();
+	}
+	
+	public String Get_Welcome_Text() {
+		return Welcome_Text.getText();
+	}
+	
+
+}
 	
