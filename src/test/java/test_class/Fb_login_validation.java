@@ -1,6 +1,7 @@
 package test_class;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -28,6 +29,11 @@ public class Fb_login_validation extends Base_class  {
 					
 				
 				}
+	@AfterClass
+	public void Terminate_Activity() throws InterruptedException {
+		
+		Quite_Browser();
+	}
 
 	
 }
